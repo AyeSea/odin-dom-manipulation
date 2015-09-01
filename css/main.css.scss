@@ -1,14 +1,84 @@
 $tomato-red: #ff1919;
+$flour-white: #ffffdb;
 
-.wrapper-fluid {
-	height: 50px;
-	background-color: $tomato-red; 
+body {
+	background-color: $flour-white;
+	font-family: 'Damion', cursive;
+}
+
+.site-header,
+.site-footer {
+	background-color: $tomato-red;
+	height: 75px; 
+	color: #fff;
+	position: fixed;
+}
+
+.site-header {
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.site-footer {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: 'Open-Sans', sans-serif
+
+}
+
+.site-footer > * {
+	margin-top: 30px;
+	font-weight: bold;
+	font-size: 11px;
 }
 
 #logo {
-	font-family: 'Pacifico', cursive;
-	color: #fff;
+	font-size: 60px;
 	text-align: center;
 	margin: 0;
 	padding: 0;
+}
+
+#copyright {
+	font-size: 11px;
+	float: left;
+}
+
+#footer-address {
+	float: right;
+}
+
+.carousel {
+	margin-top: 75px;
+	height: 500px;
+	padding: 0;
+}
+
+.slide {
+	display: none;
+	height: 100%;
+}
+
+.current-slide {
+	display: block;
+	margin: 0 auto;
+}
+
+#slide-1 {
+	background-image: url('http://images7.alphacoders.com/407/407349.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.detail-section {
+	height: 350px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.section-header {
+	font-size: 50px;
 }

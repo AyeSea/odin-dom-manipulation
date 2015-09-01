@@ -2,27 +2,52 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<title>Pizza</title>
 </head>
 <body>
 
-	<div id="content"></div>
+	<div id="content">
 	
-	<!-- Site Header -->
-	<header class="wrapper-fluid">
-		<h1 id="logo">Lucia Pizza</h1>
-	</header>
+		<!-- Site Header -->
+		<header class="container-fluid site-header">
+			<h1 id="logo">Lucia Pizza</h1>
+		</header>
 
-	<!-- Image Carousel -->
-	<section></section>
+		<!-- Image Carousel -->
+		<section class="container-fluid carousel">
+			
+			<!-- Slide -->
+			<div class="slide current-slide" id="slide-1">
+			</div>
 
+			<div class="slide"></div>
 
-	<!-- Site Footer -->
-	<footer class="wrapper-fluid"></footer>
+			<div class="slide"></div>
 
+		</section>
+		
+		
+		<!-- About Section -->
+		<section class="container detail-section">
+			<h1 class="section-header">About Us</h1>
+			<p>Serving the best slice in New York City for over 50 years.</p>
+			<p>Come grab a slice today!</p>
+		</section>
+
+		<!-- Site Footer -->
+		<footer class="site-footer">
+			<div class="container">
+				<small id="copyright">&copy; 2015 Andrew Chung</small>
+				<address id="footer-address">136-55 Roosevelt Ave, Flushing, NY 11354</address>
+			</div>
+		</footer>
+	</div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 
