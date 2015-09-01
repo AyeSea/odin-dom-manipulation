@@ -26,6 +26,13 @@ function addCarousel() {
 };
 
 function addAboutSection() {
+	var detailSection = $("<section class='container detail-section'></section>");
+	var sectionHeader = $("<h1 class='section-header'></h1>").text('About Us');
+	var p1 = $("<p></p>").text('Serving the best slice in New York City for over 50 years.');
+	var p2 = $("<p></p>").text('Come grab a slice today!');
+
+	addToContent(detailSection);
+	detailSection.append(sectionHeader, p1, p2);
 };
 
 function addFooter() {
