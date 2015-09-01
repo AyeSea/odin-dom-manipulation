@@ -36,4 +36,12 @@ function addAboutSection() {
 };
 
 function addFooter() {
+	var footer = $("<footer class='site-footer'></footer>");
+	var footerContainer = $("<div class='container'></div>");
+	var copyright = $("<small id='copyright'></small>").text("&copy; 2015 Andrew Chung");
+	var footerAddress = $("<address id='footer-address'></address>").text('136-55 Roosevelt Ave, Flushing, NY 11354');
+
+	addToContent(footer);
+	footer.append(footerContainer);
+	footerContainer.append(copyright, footerAddress);
 };
