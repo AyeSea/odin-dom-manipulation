@@ -28,11 +28,13 @@ function addCarousel() {
 
 function addAboutSection() {
 	var detailSection = $("<section class='container detail-section'></section>");
-	var sectionHeader = $("<h1 class='section-header'></h1>").text('Serving New York City for over 50 years...');
+	var detailText = $("<div></div>");
+	var heading = $("<h1 class='section-header'></h1>").text('Serving New York City for over 50 years...');
 	var p = $("<p></p>").text('Come grab a slice today!');
 
 	addToContent(detailSection);
-	detailSection.append(sectionHeader, p);
+	detailSection.append(detailText)
+	detailText.append(heading, p);
 };
 
 function addTabs() {
