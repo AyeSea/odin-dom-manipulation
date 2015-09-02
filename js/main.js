@@ -3,11 +3,9 @@ var textSection = $("<div class='detail-text-section'></div>");
 var textSectionHeader = $("<h1 class='section-header'></h1>");
 var textSectionContent = $("<div class='section-content'></div>");
 
-var tabs = ['about', 'menu', 'contact'];
-
-var aboutHeaderText = 'Serving New York City for over 50 years...';
-var menuHeaderText = 'Our Selection';
-var contactHeaderText = 'Place an Order Today!';
+var tabs = { 'about': ['Best Pizza in the City', "We've been in the same location and serving the same piping hot slices for over 50 years."],
+             'menu': ['Our Selection', '$2.50 per slice, $16 per pie'],
+          'contact': ['Delivery and Catering Available!', "Call us today at (212)-123-4567 for regular orders and catering requests!" ] };
 
 $(document).ready(function() {
 	addHeader();
@@ -16,6 +14,7 @@ $(document).ready(function() {
 	addTabs();
 	createDetailTextSection();
 	addFooter();
+	clickTab();
 });
 
 function addToContent(childElement) {
@@ -24,7 +23,7 @@ function addToContent(childElement) {
 
 function addHeader() {
 	var header = $("<header class='container-fluid site-header'></header>");
-	var logo = $("<h1 id='logo'></logo>").text('Lucia Pizza');
+	var logo = $("<h1 id='logo'></logo>").text('Piece A Pizza');
 
 	addToContent(header);
 	header.append(logo);
@@ -47,8 +46,8 @@ function addTabs() {
 	var tabsList = $("<ul class='tabs-list'></ul>");
 	detailSection.append(tabsList);
 
-	$.each(tabs, function(i, val) {
-		var tab = $("<li class='tab'></li>").text(val).attr('id', val);
+	$.each(tabs, function(key, val) {
+		var tab = $("<li class='tab'></li>").text(key).attr('id', key);
 		tabsList.append(tab);
 	});
 
@@ -57,6 +56,10 @@ function addTabs() {
 function createDetailTextSection() {
 	detailSection.append(textSection);
 	textSection.append(textSectionHeader, textSectionContent);
+};
+
+function generateTabContents(tabID) {
+
 };
 
 
@@ -69,4 +72,14 @@ function addFooter() {
 	addToContent(footer);
 	footer.append(footerContainer);
 	footerContainer.append(copyright, footerAddress);
+};
+
+function clickTab() {
+	$('.tab').click(function() {
+		$('.selected').removeClass('selected');
+		$(this).addClass('selected');
+
+		//get the id of the clicked tab and pass it htext and ptext array to generateTabContents
+
+	});
 };
