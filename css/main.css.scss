@@ -12,6 +12,7 @@ body {
 	height: 75px; 
 	color: #fff;
 	position: fixed;
+	z-index: 99;
 }
 
 .site-header {
@@ -74,10 +75,31 @@ body {
 }
 
 .detail-section {
-	height: 350px;
+	height: 425px;
 	font-size: 30px;
 	text-align: center;
 }
+
+.tabs-list {
+	border: 1px solid #e2e2e2;
+	margin: 25px auto;
+
+	.tab {
+		display: inline-block;
+		border: 1px solid #c2c2c2;
+	  margin: 5px 10px;
+	  padding: 5px 10px;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+
+	  &:hover {
+			background-color: green;
+			color: #fff;
+	  }
+	}
+}
+
+
 
 .section-header {
 	font-size: 50px;

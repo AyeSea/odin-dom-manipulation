@@ -2,6 +2,7 @@ $(document).ready(function() {
 	addHeader();
 	addCarousel();
 	addAboutSection();
+	addTabs();
 	addFooter();
 });
 
@@ -27,18 +28,29 @@ function addCarousel() {
 
 function addAboutSection() {
 	var detailSection = $("<section class='container detail-section'></section>");
-	var sectionHeader = $("<h1 class='section-header'></h1>").text('About Us');
-	var p1 = $("<p></p>").text('Serving the best slice in New York City for over 50 years.');
-	var p2 = $("<p></p>").text('Come grab a slice today!');
+	var sectionHeader = $("<h1 class='section-header'></h1>").text('Serving New York City for over 50 years...');
+	var p = $("<p></p>").text('Come grab a slice today!');
 
 	addToContent(detailSection);
-	detailSection.append(sectionHeader, p1, p2);
+	detailSection.append(sectionHeader, p);
+};
+
+function addTabs() {
+	var tabsList = $("<ul class='tabs-list'></ul>");
+	$('.detail-section').prepend(tabsList);
+	var tabNames = ['About', 'Menu', 'Contact'];
+
+	$.each(tabNames, function(i, val) {
+		var tab = $("<li class='tab'></li>").text(val);
+		tabsList.append(tab);
+	});
+
 };
 
 function addFooter() {
 	var footer = $("<footer class='site-footer'></footer>");
 	var footerContainer = $("<div class='container'></div>");
-	var copyright = $("<small id='copyright'></small>").text("&copy; 2015 Andrew Chung");
+	var copyright = $("<small id='copyright'></small>").text("2015 Andrew Chung");
 	var footerAddress = $("<address id='footer-address'></address>").text('136-55 Roosevelt Ave, Flushing, NY 11354');
 
 	addToContent(footer);
