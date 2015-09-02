@@ -1,8 +1,20 @@
+var detailSection = $("<section class='container detail-section'></section>");
+var textSection = $("<div class='detail-text-section'></div>");
+var textSectionHeader = $("<h1 class='section-header'></h1>");
+var textSectionContent = $("<div class='section-content'></div>");
+
+var tabs = ['about', 'menu', 'contact'];
+
+var aboutHeaderText = 'Serving New York City for over 50 years...';
+var menuHeaderText = 'Our Selection';
+var contactHeaderText = 'Place an Order Today!';
+
 $(document).ready(function() {
 	addHeader();
 	addCarousel();
-	addAboutSection();
+	addDetailSection();
 	addTabs();
+	createDetailTextSection();
 	addFooter();
 });
 
@@ -26,28 +38,27 @@ function addCarousel() {
 	carousel.append(slide1);
 };
 
-function addAboutSection() {
-	var detailSection = $("<section class='container detail-section'></section>");
-	var detailText = $("<div></div>");
-	var heading = $("<h1 class='section-header'></h1>").text('Serving New York City for over 50 years...');
-	var p = $("<p></p>").text('Come grab a slice today!');
-
+function addDetailSection() {
 	addToContent(detailSection);
-	detailSection.append(detailText)
-	detailText.append(heading, p);
 };
+
 
 function addTabs() {
 	var tabsList = $("<ul class='tabs-list'></ul>");
-	$('.detail-section').prepend(tabsList);
-	var tabNames = ['About', 'Menu', 'Contact'];
+	detailSection.append(tabsList);
 
-	$.each(tabNames, function(i, val) {
-		var tab = $("<li class='tab'></li>").text(val);
+	$.each(tabs, function(i, val) {
+		var tab = $("<li class='tab'></li>").text(val).attr('id', val);
 		tabsList.append(tab);
 	});
 
 };
+
+function createDetailTextSection() {
+	detailSection.append(textSection);
+	textSection.append(textSectionHeader, textSectionContent);
+};
+
 
 function addFooter() {
 	var footer = $("<footer class='site-footer'></footer>");
