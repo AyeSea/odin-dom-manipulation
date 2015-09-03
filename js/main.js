@@ -50,6 +50,8 @@ function addTabs() {
 		var tab = $("<li class='tab'></li>").text(key).attr('id', key);
 		tabsList.append(tab);
 	});
+
+	generateTabContents('about');
 };
 
 function createDetailTextSection() {
@@ -76,10 +78,6 @@ function addFooter() {
 
 function clickTab() {
 	$('.tab').click(function() {
-		$('.selected').removeClass('selected');
-		$(this).addClass('selected');
-
-		//get the id of the clicked tab and pass it htext and ptext array to generateTabContents
 		generateTabContents($(this).attr('id'));
 	});
 };
