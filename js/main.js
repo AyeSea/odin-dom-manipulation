@@ -51,7 +51,9 @@ function addTabs() {
 		tabsList.append(tab);
 	});
 
+	$('#about').addClass('selected');
 	generateTabContents('about');
+
 };
 
 function createDetailTextSection() {
@@ -68,7 +70,7 @@ function generateTabContents(tabID) {
 function addFooter() {
 	var footer = $("<footer class='site-footer'></footer>");
 	var footerContainer = $("<div class='container'></div>");
-	var copyright = $("<small id='copyright'></small>").text("2015 Andrew Chung");
+	var copyright = $("<small id='copyright'></small>").text("Piece a Pizza");
 	var footerAddress = $("<address id='footer-address'></address>").text('123 Main Street, New York, NY, 10022');
 
 	addToContent(footer);
@@ -78,6 +80,9 @@ function addFooter() {
 
 function clickTab() {
 	$('.tab').click(function() {
+		$('.selected').removeClass('selected');
+		$(this).addClass('selected');
+
 		generateTabContents($(this).attr('id'));
 	});
 };
