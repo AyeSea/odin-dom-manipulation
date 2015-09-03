@@ -50,7 +50,6 @@ function addTabs() {
 		var tab = $("<li class='tab'></li>").text(key).attr('id', key);
 		tabsList.append(tab);
 	});
-
 };
 
 function createDetailTextSection() {
@@ -59,7 +58,8 @@ function createDetailTextSection() {
 };
 
 function generateTabContents(tabID) {
-
+	textSectionHeader.text(tabs[tabID][0]);
+	textSectionContent.text(tabs[tabID][1]);
 };
 
 
@@ -67,7 +67,7 @@ function addFooter() {
 	var footer = $("<footer class='site-footer'></footer>");
 	var footerContainer = $("<div class='container'></div>");
 	var copyright = $("<small id='copyright'></small>").text("2015 Andrew Chung");
-	var footerAddress = $("<address id='footer-address'></address>").text('136-55 Roosevelt Ave, Flushing, NY 11354');
+	var footerAddress = $("<address id='footer-address'></address>").text('123 Main Street, New York, NY, 10022');
 
 	addToContent(footer);
 	footer.append(footerContainer);
@@ -80,6 +80,6 @@ function clickTab() {
 		$(this).addClass('selected');
 
 		//get the id of the clicked tab and pass it htext and ptext array to generateTabContents
-
+		generateTabContents($(this).attr('id'));
 	});
 };
